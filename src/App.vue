@@ -1,57 +1,39 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+  <v-app class="grey lighten-4" id="main-div">
+    <span class="bg"></span>
+    <navbar />
 
     <v-content>
-      <HelloWorld />
+      <router-view></router-view>
     </v-content>
+    <div class="head-foot"></div>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import Navbar from "@/components/Navbar.vue";
 
 export default Vue.extend({
   name: "App",
-
   components: {
-    HelloWorld
+    Navbar,
   },
-
-  data: () => ({
-    //
-  })
+  data: () => ({}),
 });
 </script>
+<style scoped>
+.bg {
+  width: 100%;
+  height: 95%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: no-repeat center center;
+  /*background-image: url(https://solvid.co.uk/wp-content/uploads/2018/06/Content-Marketing-Background-1.png),
+    linear-gradient(119deg, #000d58 40%, #651bb5 100%) !important;*/
+  background-size: cover;
+  background-color: #1a237e;
+  transform: scale(1.1);
+}
+</style>
