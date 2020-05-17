@@ -27,28 +27,16 @@
       </v-toolbar>
       <v-stepper-header>
         <template v-for="(n, index) in formorder">
-          <v-stepper-step
-            :key="`${index + 1}-step`"
-            :complete="e1 > index + 1"
-            :step="index + 1"
-            editable
-          >
+          <v-stepper-step :key="`${index + 1}-step`" :complete="e1 > index + 1" :step="index + 1" editable>
             Step {{ index + 1 }}
           </v-stepper-step>
 
-          <v-divider
-            v-if="index + 1 !== steps + 1"
-            :key="index + 1"
-          ></v-divider>
+          <v-divider v-if="index + 1 !== steps + 1" :key="index + 1"></v-divider>
         </template>
       </v-stepper-header>
 
       <v-stepper-items>
-        <v-stepper-content
-          v-for="(n, index) in formorder"
-          :key="`${index + 1}-content`"
-          :step="index + 1"
-        >
+        <v-stepper-content v-for="(n, index) in formorder" :key="`${index + 1}-content`" :step="index + 1">
           <component v-bind:is="n" rendertype="short"></component>
 
           <v-btn color="primary" @click="nextStep(index + 1)">
@@ -96,7 +84,7 @@ export default {
       }
     },
   },
-  created: function() {
+  created: function () {
     console.log(this.products);
   },
   methods: {

@@ -1,28 +1,13 @@
+/* eslint-disable es-beautifier/multiline-import-specifiers */
 import { applicationformschema } from "@/models/applicationFormSchema";
+import { applicationformvalues } from "@/models/applicationFormStructure";
+import { get, is, hasIn, set } from "lodash";
 
 const state = {
-  funeralpolicy: applicationformschema,
+  funeralpolicyschema: applicationformschema,
+  funeralpolicyvalues: applicationformvalues,
   dependants: [],
-  counter: 5,
-};
-
-const mutations = {
-  decrementCounter(state, payload) {
-    state.counter = state.counter - payload;
-    state.counter < 0 ? (state.counter = 0) : state.counter;
-  },
-  resetCounter(state) {
-    state.counter = 5;
-  },
-};
-
-const actions = {
-  decrementState(state, payload) {
-    state.commit("decrementCounter", payload);
-  },
-  resetState(state) {
-    state.commit("resetCounter");
-  },
+  counter: 7,
 };
 
 const getters = {
@@ -33,7 +18,25 @@ const getters = {
     return state.counter;
   },
   policyformschema(state) {
-    return state.funeralpolicy;
+    return state.funeralpolicyschema;
+  },
+};
+
+const mutations = {
+  setPolicyValue(state, payload) {
+    if (hasIn(state.funeralpolicyvalues, payload.key.toString().split("."))) {
+      set(
+        state.funeralpolicyvalues,
+        payload.key.toString().split("."),
+        payload.value
+      );
+    }
+  },
+};
+
+const actions = {
+  setPolicyValue: ({ commit }, payload) => {
+    commit("setPolicyValue", payload);
   },
 };
 

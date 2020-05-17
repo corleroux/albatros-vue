@@ -10,11 +10,7 @@
             <div class="text-uppercase">Policy Holder details</div>
           </v-col>
           <v-col cols="12" md="8">
-            <v-form-base
-              :value="formValue.PolicyHolder"
-              :schema="formSchema.PolicyHolder"
-              @update="onUpdateForm"
-            />
+            <v-form-base :value="formValue.PolicyHolder" :schema="formSchema.PolicyHolder" @update="onUpdateForm" />
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -24,11 +20,7 @@
             <div class="text-uppercase pt-10">Address</div>
           </v-col>
           <v-col cols="12" md="8">
-            <v-form-base
-              :value="formValue.Address"
-              :schema="formSchema.Address"
-              @update="onUpdateForm"
-            />
+            <v-form-base :value="formValue.Address" :schema="formSchema.Address" @update="onUpdateForm" />
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -38,11 +30,7 @@
             <div class="text-uppercase pt-10">Spouse's details</div>
           </v-col>
           <v-col cols="12" md="8">
-            <v-form-base
-              :value="formValue.Spouse"
-              :schema="formSchema.Spouse"
-              @update="onUpdateForm"
-            />
+            <v-form-base :value="formValue.Spouse" :schema="formSchema.Spouse" @update="onUpdateForm" />
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -54,11 +42,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="8">
-            <v-form-base
-              :value="formValue.Dependants"
-              :schema="formSchema.Dependants"
-              @update="onUpdateForm"
-            />
+            <v-form-base :value="formValue.Dependants" :schema="formSchema.Dependants" @update="onUpdateForm" />
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -70,11 +54,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="8">
-            <v-form-base
-              :value="formValue.ExtendedFamily"
-              :schema="formSchema.ExtendedFamily"
-              @update="onUpdateForm"
-            />
+            <v-form-base :value="formValue.ExtendedFamily" :schema="formSchema.ExtendedFamily" @update="onUpdateForm" />
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -86,11 +66,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="8">
-            <v-form-base
-              :value="formValue.Beneficiary"
-              :schema="formSchema.Beneficiary"
-              @update="onUpdateForm"
-            />
+            <v-form-base :value="formValue.Beneficiary" :schema="formSchema.Beneficiary" @update="onUpdateForm" />
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -100,11 +76,7 @@
             <div class="text-uppercase pt-10">Banking Details</div>
           </v-col>
           <v-col cols="12" md="8">
-            <v-form-base
-              :value="formValue.BankingDetails"
-              :schema="formSchema.BankingDetails"
-              @update="onUpdateForm"
-            />
+            <v-form-base :value="formValue.BankingDetails" :schema="formSchema.BankingDetails" @update="onUpdateForm" />
           </v-col>
         </v-row>
         <v-divider></v-divider>
@@ -117,11 +89,7 @@
           </v-col>
           <v-col cols="12" md="8">
             <div>{{ formValue.Declaration.Body }}</div>
-            <v-form-base
-              :value="formValue.Declaration"
-              :schema="formSchema.Declaration"
-              @update="onUpdateForm"
-            />
+            <v-form-base :value="formValue.Declaration" :schema="formSchema.Declaration" @update="onUpdateForm" />
           </v-col>
         </v-row>
       </v-card-text>
@@ -141,9 +109,8 @@ import VFormBase from "dco-vuetify-form";
 
 import db from "@/db.ts";
 
-import applicationFormSchema from "@/models/applicationFormSchema.ts";
-
-import applicationFormStruct from "@/models/applicationFormStructure.ts";
+import { applicationformschema } from "@/models/applicationFormSchema";
+import { applicationformvalues } from "@/models/applicationFormStructure";
 
 import policyHolderStruct from "@/models/policyholder.ts";
 
@@ -177,8 +144,8 @@ export default Vue.extend({
         ...bankingdetailsStruct,
         ...declarationStruct,
       },
-      formSchema: applicationFormSchema,
-      origValue: applicationFormStruct,
+      formSchema: applicationformschema,
+      origValue: applicationformvalues,
     };
   },
   methods: {

@@ -23,6 +23,7 @@ export default Vue.extend({
 
 <style lang="sass">
 #home-hero
+ /*background-image: url(https://solvid.co.uk/wp-content/uploads/2018/06/Content-Marketing-Background-1.png),linear-gradient(119deg,#000D58 40%,#651bb5 100%)!important */
   background-size: cover
   background-position: center right
 

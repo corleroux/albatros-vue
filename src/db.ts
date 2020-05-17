@@ -11,7 +11,7 @@ const firebaseConfig = {
   storageBucket: "collectif-leads.appspot.com",
   messagingSenderId: "695125903788",
   appId: "1:695125903788:web:4a1de0c86daf89c38a1209",
-  measurementId: "G-EG1XZS4VFM"
+  measurementId: "G-EG1XZS4VFM",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);

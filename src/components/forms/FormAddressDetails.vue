@@ -1,10 +1,6 @@
 <template>
   <div>
-    <v-form-base
-      id="array-ease"
-      :value="addressValue"
-      :schema="addressSchema"
-    />
+    <v-form-base id="array-ease" :value="addressValue" :schema="addressSchema" />
   </div>
 </template>
 
@@ -23,9 +19,9 @@ export default Vue.extend({
         PostalCode: "",
       },
       addressSchema: {
-        AddressLine1: { type: "text", label: "Address line" },
-        AddressLine2: { type: "text", label: "Address line 2" },
-        PostalCode: { type: "number", label: "Postal Code" },
+        AddressLine1: { type: "text",label: "Address line" },
+        AddressLine2: { type: "text",label: "Address line 2" },
+        PostalCode: { type: "number",label: "Postal Code" },
       },
     };
   },

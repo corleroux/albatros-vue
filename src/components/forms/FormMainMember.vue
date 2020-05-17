@@ -1,5 +1,5 @@
 <template>
-  <v-form-base :value="memberValue" :schema="formRenderType" />
+  <v-form-base id="form-main-member" :value="memberValue" :schema="formRenderType" @update:form-main-member="update" />
 </template>
 
 <script lang="ts">
@@ -72,6 +72,8 @@ export default Vue.extend({
       return this.memberValue.PolicyHolder.DateOfBirth;
     },
     formRenderType() {
+      // short circuiting this method for testing
+      return this.memberSchemaShort;
       if (this.rendertype == "short") {
         return this.memberSchemaShort;
       }
@@ -79,16 +81,14 @@ export default Vue.extend({
     },
   },
   watch: {
-    DateOfBirth: function(val) {
+    DateOfBirth: function (val) {
       this.calculateAge(val);
       console.log(this.memberValue.PolicyHolder.Age);
     },
   },
   methods: {
-    calculateAge: function(dobs) {
+    calculateAge: function (dobs) {
       const mydate = dobs.split("-");
-      console.log(dobs);
-      console.log(mydate);
       const dob = new Date(mydate[0], mydate[1], mydate[2]);
       const diffMs = Date.now() - dob.getTime();
       const ageDt = new Date(diffMs);
@@ -97,6 +97,20 @@ export default Vue.extend({
       );
       return this.memberValue.PolicyHolder.Age;
     },
+    update({ on, key, obj, params }) {
+      // console.log("this is on " + on);
+      // test event is 'click' and comes from appendIcon on key 'password'
+      if (on == 'input') {
+        console.log("This is the value in the store that will be updated");
+        console.log(key + ":" + obj.value)
+        console.debug("this is the object ", [obj])
+        const payload = {
+          'key': key,
+          'value': obj.value
+        };
+        this.$store.commit('setPolicyValue', payload);
+      }
+    }
   },
 });
 </script>

@@ -1,5 +1,5 @@
-export const products = [
-  {
+export const funeralproducts = {
+  individual: {
     type: "individual",
     title: "Individual",
     icon: "mdi-account-outline",
@@ -8,6 +8,7 @@ export const products = [
       "Funeral cover for Individuals / Single parent families and Families",
     maxChild: 0,
     maxFamily: 0,
+    cover: [5000, 10000, 15000],
     packages: {
       standard: {
         ageRange: {
@@ -51,7 +52,7 @@ export const products = [
       },
     },
   },
-  {
+  singleparent: {
     type: "singleparent",
     title: "Single Parent Family",
     icon: "mdi-account-multiple-outline",
@@ -103,7 +104,7 @@ export const products = [
       },
     },
   },
-  {
+  familyfuneral: {
     type: "familyfuneral",
     title: "Family",
     icon: "mdi-account-group-outline",
@@ -155,4 +156,4 @@ export const products = [
       },
     },
   },
-];
+};

@@ -2,9 +2,7 @@
   <section>
     <v-toolbar color="white" light>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <router-link :to="{ name: 'Home' }" tag="div" class="v-toolbar__title"
-        ><a>LinkTitle</a></router-link
-      >
+      <router-link :to="{ name: 'Home' }" tag="div" class="v-toolbar__title"><a>LinkTitle</a></router-link>
 
       <v-spacer></v-spacer>
       <v-btn icon>
@@ -89,11 +87,11 @@
                 <v-icon>{{ item.icon }}</v-icon>
               </v-list-item-icon>
               <v-list-item-content>
-                <v-list-item-title
-                  ><router-link :to="item.route">{{
+                <v-list-item-title>
+                  <router-link :to="item.route">{{
                     item.title
-                  }}</router-link></v-list-item-title
-                >
+                  }}</router-link>
+                </v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -111,7 +109,7 @@ export default Vue.extend({
     return {
       drawer: false,
       items: [
-        { title: "Home", icon: "mdi-home-city", route: "/" },
+        { title: "Home",icon: "mdi-home-city",route: "/" },
         {
           title: "Get Funeral Cover",
           icon: "mdi-account",

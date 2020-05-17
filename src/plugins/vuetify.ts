@@ -49,8 +49,7 @@ const theme = {
   info: "#607d8b",
   success: "#4caf50",
 };
-//#3D5AFE
-//#ff9800
+
 export default new Vuetify({
   theme: {
     themes: {

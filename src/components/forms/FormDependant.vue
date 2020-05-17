@@ -34,8 +34,8 @@ export default Vue.extend({
         Dependants: {
           type: "array",
           schema: {
-            FirstName: { type: "text", label: "First Name" },
-            Surname: { type: "text", label: "Surname" },
+            FirstName: { type: "text",label: "First Name" },
+            Surname: { type: "text",label: "Surname" },
             DateOfBirth: {
               type: "calendar",
               label: "Date of Birth",
@@ -44,7 +44,7 @@ export default Vue.extend({
             RelationToPolicyHolder: {
               type: "select",
               label: "Relation to Policy Holder",
-              items: ["Father", "Mother", "Uncle", "Aunt", "Nephew", "Neice"],
+              items: ["Father","Mother","Uncle","Aunt","Nephew","Neice"],
             },
           },
         },

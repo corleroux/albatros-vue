@@ -8,7 +8,7 @@
 <script lang="ts">
 import Vue from "vue";
 import FormWizard from "@/components/FormWizard.vue";
-import { products } from "@/models/funeralproductmodel";
+
 import FormWindow from "@/components/FormWindow.vue";
 
 export default Vue.extend({
@@ -18,7 +18,11 @@ export default Vue.extend({
     FormWindow: FormWindow,
   },
   data: () => ({
-    products,
   }),
+  computed: {
+    products() {
+      return this.$store.getters.getallfuneralproducts;
+    },
+  },
 });
 </script>

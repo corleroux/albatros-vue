@@ -67,32 +67,11 @@ import Vue from "vue";
 export default Vue.extend({
   data: () => ({
     name: "FuneralCoverProducts",
-    products: [
-      {
-        coverAmount: 5000,
-        name: "Member Only",
-        premium: [
-          { ageMin: 21, ageMax: 65, amount: 33 },
-          { ageMin: 66, ageMax: 74, amount: 65 }
-        ]
-      },
-      {
-        coverAmount: 10000,
-        name: "Member Only",
-        premium: [
-          { ageMin: 21, ageMax: 65, amount: 40 },
-          { ageMin: 66, ageMax: 74, amount: 100 }
-        ]
-      },
-      {
-        coverAmount: 15000,
-        name: "Member Only",
-        premium: [
-          { ageMin: 21, ageMax: 65, amount: 48 },
-          { ageMin: 66, ageMax: 74, amount: 137 }
-        ]
-      }
-    ]
-  })
+  }),
+  computed: {
+    products() {
+      return this.$store.getters.getallfuneralproducts;
+    }
+  }
 });
 </script>

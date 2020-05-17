@@ -6,11 +6,13 @@ export const applicationformschema = {
       selected: 0,
       items: ["Mr", "Ms", "Mrs", "Dr"],
     },
-    Fullname: {
+    FirstName: {
       type: "text",
-      label: "Fullname",
+      label: "First Name",
       placeholder: "",
+      prependInnerIcon: "mdi-access-point-network-off",
     },
+    Surname: { type: "text", label: "Surname" },
     IdentityNumber: { type: "text", label: "ID Number" },
     DateOfBirth: {
       type: "calendar",
@@ -18,7 +20,22 @@ export const applicationformschema = {
       color: "primary",
     },
     Email: { type: "text", label: "Email" },
-    MobilePhone: { type: "text", label: "Phone Number" },
+    Phone: [
+      {
+        PhoneType: {
+          type: "select",
+          label: "Phone Type",
+          selected: "0",
+          items: ["Mobile", "Home", "Work"],
+        },
+        PhoneNumber: { type: "text", label: "Phone Number" },
+      },
+    ],
+  },
+  Address: {
+    address1: { type: "text", label: "Address Line 1" },
+    address2: { type: "text", label: "Address Line 2" },
+    postalcode: { type: "text", label: "Postal Code" },
   },
 
   Spouse: {

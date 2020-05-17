@@ -10,12 +10,7 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn
-        tile
-        color="accent"
-        class="font-weight-black headline"
-        @click="submit"
-      >
+      <v-btn tile color="accent" class="font-weight-black headline" @click="submit">
         Get Covered Today
       </v-btn>
       <v-spacer></v-spacer>
